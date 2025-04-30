@@ -15,8 +15,8 @@ class Controller:
         self._view.update_page()
         grafo_voli = self._model.analizza(self._view.distanza.value)
         self._view.txt_result.controls.clear()
-        self._view.txt_result.controls.append(ft.Text(f"Numero di nodi: {nx.number_of_nodes(grafo_voli)}"))
-        self._view.txt_result.controls.append(ft.Text(f"Numero di alberi: {nx.number_of_edges(grafo_voli)}"))
-        for volo in grafo_voli.edges:
-            self._view.txt_result.controls.append(ft.Text(volo))
+        self._view.txt_result.controls.append(ft.Text(f"Numero di nodi: {nx.number_of_nodes(grafo_voli)}", size=16, italic=True))
+        self._view.txt_result.controls.append(ft.Text(f"Numero di alberi: {nx.number_of_edges(grafo_voli)}", size=16, italic=True))
+        for volo in grafo_voli.edges(data=True):
+            self._view.txt_result.controls.append(ft.Text(f"{volo[0]} --> {volo[1]}, {volo[2]["weight"]} miglia", size=16))
         self._view.update_page()

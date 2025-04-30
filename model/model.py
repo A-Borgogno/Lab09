@@ -17,6 +17,7 @@ class Model:
         self._grafo.add_nodes_from(self._aeroporti)
 
     def analizza(self, distanza):
+        self._grafo.clear_edges()
         self.addEdges(distanza)
         return self._grafo
 

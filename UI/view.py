@@ -26,8 +26,8 @@ class View(ft.UserControl):
         #ROW with some controls
         # text field for the name
         self.distanza = ft.TextField(
-            label="Distanza minima in miglia",
-            width=200,
+            label="Distanza minima media in miglia",
+            width=400,
             hint_text="Distanza minima"
         )
 
